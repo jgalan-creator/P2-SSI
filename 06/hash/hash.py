@@ -14,10 +14,9 @@ def mostrar_ayuda():
     print()
     print("Ejemplos:")
     print("  python hash.py -md5 -t texto")
-    print("  python hash.py -sha256 -f entrada.txt")
+    print("  python hash.py -sha256 -f secreto.txt")
 
 def hash(entrada, hashing):
-    entrada = entrada.encode('utf8')
     if hashing == "-sha256":
         hash_obj = hashlib.sha256()
         hash_obj.update(entrada)
@@ -51,8 +50,8 @@ def main():
     archivo_entrada = sys.argv[3]
 
     if t_o_f == "-f":
-        with open(archivo_entrada, "r") as entrada:
-            texto_original = entrada.read().strip()
+        with open(archivo_entrada, "rb") as entrada:
+            texto_original = entrada.read()
 
     if t_o_f == "-t":
         texto_original = archivo_entrada
