@@ -10,10 +10,11 @@ def mostrar_ayuda():
     print("Argumentos:")
     print("  operación          -md5 | -sha1 | -sha256")
     print("  texto o archivo    -t si es texto | -f si es fichero")
+    print("     - si es texto el texto debe ir obligatoriamente entre comillas dobles")
     print("  archivo_entrada    Archivo de texto que se va a procesar")
     print()
     print("Ejemplos:")
-    print("  python hash.py -md5 -t texto")
+    print('  python hash.py -md5 -t "frase entre comillas dobles"')
     print("  python hash.py -sha256 -f secreto.txt")
 
 def hash(entrada, hashing):
